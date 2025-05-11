@@ -3,11 +3,11 @@ A library for showing popup windows in the terminal.
 # Basic usage
 You can either use the quick method:
 ```cs
-Popup.Quick("Hello, world!")
+Popup.Quick("Hello, world!");
 ```
 or create an object to reuse the same popup:
 ```cs
-Popup popup = new("Hello, world!")
+Popup popup = new("Hello, world!");
 popup.Show();
 ```
 # Popup types
