@@ -1,11 +1,8 @@
 ﻿using PopupLib;
 
 //Popup.Shading = '·';
-SelectPopup p = SelectPopup.FromEnum<PopupType>("Select one:");
-while (true) {
-    var option = p.Show();
-    p.SetContent($"You selected: {option}\nSelect one:");
-    if (option == "Custom") break;
-}
+Popup.Quick("Hello, world!\nThis is an example popup", title: "Example");
+    //p = new Popup("Hello, world!\nThis is an example popup", "Example");
+//p.Show();
 Console.Clear();
 Console.CursorVisible = true;

@@ -1,4 +1,7 @@
-﻿namespace PopupLib;
+﻿using System.Net.Quic;
+using System.Runtime.CompilerServices;
+
+namespace PopupLib;
 /// <summary>
 /// A simple popup that returns the key pressed.
 /// </summary>
@@ -125,12 +128,32 @@ public class Popup {
         Console.SetCursorPosition(x, y + Height + 2);
         Console.Write(' ' + new string(Shading, Width + 4));
     }
-    public virtual ConsoleKeyInfo Show(int x = -1, int y = -1) {
+    /// <summary>
+    /// Shows the popup and handles all interaction.
+    /// </summary>
+    /// <param name="x">The x coordinate of the top-left corner. Set to -1 to use center of console window</param>
+    /// <param name="y">The y coordinate of the top-left corner. Set to -1 to use center of console window</param>
+    /// <returns>The key pressed by the user</returns>
+    public ConsoleKeyInfo Show(int x = -1, int y = -1) {
         Render(x, y);
         Console.CursorVisible = false;
         var key = Console.ReadKey(true);
         Console.Clear();
         return key;
+    }
+/// <summary>
+/// Shortcut method for showing a popup
+/// </summary>
+/// <param name="content">The message of the popup</param>
+/// <param name="x">The x coordinate of the top-left corner. Set to -1 to use center of console window</param>
+/// <param name="y">The y coordinate of the top-left corner. Set to -1 to use center of console window</param>
+/// <param name="wrap">The ideal amount of characters per line</param>
+/// <param name="type">The type of the popup</param>
+/// <param name="title">The text in the title bar</param>
+/// <returns>The key pressed by the user</returns>
+    public static ConsoleKeyInfo Quick(string content, int x = -1, int y = -1, string? title = null, int wrap = 32,
+        PopupType type = PopupType.Info) {
+        return new Popup(content, title, wrap, type).Show(x, y);
     }
 }
 
