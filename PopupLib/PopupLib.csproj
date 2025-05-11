@@ -4,9 +4,13 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyVersion></AssemblyVersion>
-        <Version>1.1.0</Version>
+        <Version>1.0.0</Version>
         <Authors>hexahedron1</Authors>
+        <Title>PopupLib</Title>
+        <Description>A library for showing popups in console</Description>
+        <PackageProjectUrl>https://github.com/hexahedron1/popuplib</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/hexahedron1/popuplib</RepositoryUrl>
+        <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     </PropertyGroup>
 
 </Project>
