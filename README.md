@@ -8,7 +8,6 @@ Popup.Quick("Hello, world!")
 or create an object to reuse the same popup:
 ```cs
 Popup popup = new("Hello, world!")
->>>>>>> parent of 4071aaa (day 5 of torturing README.md)
 popup.Show();
 ```
 # Popup types
