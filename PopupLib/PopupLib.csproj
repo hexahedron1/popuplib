@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyVersion></AssemblyVersion>
+        <Version>1.1.0</Version>
+        <Authors>hexahedron1</Authors>
+    </PropertyGroup>
+
+</Project>
