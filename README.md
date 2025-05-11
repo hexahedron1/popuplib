@@ -1,4 +1,4 @@
-A library for showing popup windows in the terminal.
+A library for showing popup windows in the terminal.  
 ![image](https://github.com/user-attachments/assets/1c940825-c92f-457d-b339-2cf6d1aeef91)
 # Basic usage
 You can either use the quick method:
