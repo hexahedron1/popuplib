@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace PopupLib;
 /// <summary>
-/// A simple popup that returns the key pressed.
+/// A simple popup that shows a message to the user, additionally returning the key pressed.
 /// </summary>
 public class Popup {
     /// <summary>
