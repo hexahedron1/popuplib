@@ -18,4 +18,5 @@ Currently there are 2 types:
 - **Popup** - simple popup, shows text, closes on key press and returns the pressed key
 - **SelectPopup** - provides a selection of options to the user, closes on enter key and returns selected item
 - **ColorPickerPopup** - lets the user pick a ConsoleColor with preview
-More types will be added in the future
+- **TextPromptPopup** - lets the user type a line of characters, with optional length limit and placeholder
+

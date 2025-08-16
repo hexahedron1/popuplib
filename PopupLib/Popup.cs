@@ -31,9 +31,8 @@ public class Popup {
     public string? Format { get; set; }
     /// <summary>
     /// The text content of the popup.
-    /// Don't set manually, use <c>SetContent</c> instead.
     /// </summary>
-    public string[] Content { get; set; }
+    public string[] Content { get; private set; }
     internal static readonly Dictionary<PopupType, Tuple<char, string>> Formatting = new() {
         { PopupType.Info, new('i', "94m") },
         { PopupType.Question, new('?', "96m") },

@@ -1,9 +1,10 @@
 ﻿using PopupLib;
 Console.Clear();
-bool sq = SelectPopup.Quick("Display squares?", ["Yes", "No"]) == "Yes";
-ConsoleColor col = ColorPickerPopup.Quick("test", squares: sq);
+TextPromptPopup popup = new("Type some garbage here", "type here", limit: (Console.WindowWidth <= 64 ? Console.WindowWidth : null));
+string message = popup.Show();
+ConsoleColor color = ColorPickerPopup.Quick("Select a color");
 Console.Clear();
-Console.ForegroundColor = col;
-Console.WriteLine("The quick brown fox jumps over the lazy dog");
+Console.ForegroundColor = color;
+Console.WriteLine(message);
 Console.ResetColor();
 Console.CursorVisible = true;

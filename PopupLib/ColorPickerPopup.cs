@@ -15,7 +15,7 @@ public class ColorPickerPopup : Popup {
     /// <param name="squares">Wheter to display <c>█░</c> in the preview rather than <c>Aa</c></param>
     public ColorPickerPopup(string content, string? title = null, int wrap = 32, PopupType type = PopupType.Info, bool squares = false) :
         base(content, title, wrap, type) {
-        Height = content.Length + 2;
+        Height = Content.Length + 3;
         Width = Math.Max(16, Width);
         Squares = squares;
     }
@@ -50,7 +50,6 @@ public class ColorPickerPopup : Popup {
             Console.SetCursorPosition(x + 1, y + Content.Length + 2 + selected / 8);
             Console.Write(">");
         }
-
         for (int i = 0; i < 16; i++) {
             Console.SetCursorPosition(x + 2 + (i%8)*2, y + Content.Length + 2 + (i/8));
             if (selected == i) {
