@@ -12,7 +12,7 @@ public class ColorPickerPopup : Popup {
     /// <param name="title">The text in the title bar</param>
     /// <param name="wrap">The ideal amount of characters per line</param>
     /// <param name="type">The type of the popup</param>
-    /// <param name="squares">Wheter to display <c>█▒</c> in the preview rather than <c>Aa</c></param>
+    /// <param name="squares">Wheter to display <c>█░</c> in the preview rather than <c>Aa</c></param>
     public ColorPickerPopup(string content, string? title = null, int wrap = 32, PopupType type = PopupType.Info, bool squares = false) :
         base(content, title, wrap, type) {
         Height = content.Length + 2;
@@ -28,7 +28,7 @@ public class ColorPickerPopup : Popup {
     /// <param name="wrap">The ideal amount of characters per line</param>
     /// <param name="type">The type of the popup</param>
     /// <param name="title">The text in the title bar</param>
-    /// <param name="squares">Wheter to display <c>█▒</c> in the preview rather than <c>Aa</c></param>
+    /// <param name="squares">Wheter to display <c>█░</c> in the preview rather than <c>Aa</c></param>
     /// <returns>The key pressed by the user</returns>
     public static ConsoleColor Quick(string content, int x = -1, int y = -1, string? title = null, int wrap = 32,
         PopupType type = PopupType.Info, bool squares = false) {
@@ -60,7 +60,7 @@ public class ColorPickerPopup : Popup {
                 Console.ForegroundColor = (ConsoleColor)i;
                 Console.BackgroundColor = ConsoleColor.Black;
             }
-            Console.Write(Squares ? "█▒" : "Aa");
+            Console.Write(Squares ? "█░" : "Aa");
         }
         /*Console.SetCursorPosition(x, y + Content.Length + 4);
         Console.Write($"╟{new string('─', Width + 2)}╢{Shading}");//╟─╢
