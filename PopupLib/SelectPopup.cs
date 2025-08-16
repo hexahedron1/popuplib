@@ -86,4 +86,19 @@ public class SelectPopup : Popup {
             }
         }
     }
+    /// <summary>
+    /// Shortcut method for showing a popup
+    /// </summary>
+    /// <param name="content">The message of the popup</param>
+    /// <param name="options">The options of the popup</param>
+    /// <param name="x">The x coordinate of the top-left corner. Set to -1 to use center of console window</param>
+    /// <param name="y">The y coordinate of the top-left corner. Set to -1 to use center of console window</param>
+    /// <param name="wrap">The ideal amount of characters per line</param>
+    /// <param name="type">The type of the popup</param>
+    /// <param name="title">The text in the title bar</param>
+    /// <returns>The key pressed by the user</returns>
+    public static string Quick(string content, string[] options, int x = -1, int y = -1, string? title = null, int wrap = 32,
+        PopupType type = PopupType.Info) {
+        return new SelectPopup(content, options, title, wrap, type).Show(x, y);
+    }
 }

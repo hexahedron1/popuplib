@@ -1,8 +1,9 @@
 ﻿using PopupLib;
-
-//Popup.Shading = '·';
-Popup.Quick("Hello, world!\nThis is an example popup", title: "Example");
-    //p = new Popup("Hello, world!\nThis is an example popup", "Example");
-//p.Show();
 Console.Clear();
+bool sq = SelectPopup.Quick("Display squares?", ["Yes", "No"]) == "Yes";
+ConsoleColor col = ColorPickerPopup.Quick("test", squares: sq);
+Console.Clear();
+Console.ForegroundColor = col;
+Console.WriteLine("The quick brown fox jumps over the lazy dog");
+Console.ResetColor();
 Console.CursorVisible = true;
