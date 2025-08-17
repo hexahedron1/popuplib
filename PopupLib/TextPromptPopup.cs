@@ -9,11 +9,11 @@ public class TextPromptPopup : Popup {
         Limit = limit;
     }
 
-    public string Prompt { get; private set; } = "";
+    public string Prompt { get; set; } = "";
     public string Placeholder { get; set; }
     public int? Limit { get; set; }
-    public int Offset { get; set; }
-    public override void Render(int x = -1, int y = -1) {
+    private int Offset { get; set; }
+    protected override void Render(int x = -1, int y = -1) {
         if (Console.WindowWidth < Width + 4 || Console.WindowHeight < Height + 2) {
             Console.Clear();
             Console.Write("\e[91mUnable to fit window on screen\e[0m");
@@ -72,7 +72,7 @@ public class TextPromptPopup : Popup {
             }
             Offset = Prompt.Length > Width ? Prompt.Length - Width : 0;
         }
-    }public static string Quick(string content, int x = -1, int y = -1, string placeholder = "", int? limit = null, string? title = null, int wrap = 32,
+    } public static string Quick(string content, int x = -1, int y = -1, string placeholder = "", int? limit = null, string? title = null, int wrap = 32,
         PopupType type = PopupType.Info) {
         return new TextPromptPopup(content, placeholder, limit, title, wrap, type).Show(x, y);
     }

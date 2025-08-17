@@ -45,7 +45,7 @@ public class SelectPopup : Popup {
         return w;
     }
 
-    public void Render(int selected = 0, int x = -1, int y = -1) {
+    private void Render(int selected = 0, int x = -1, int y = -1) {
         if (Console.WindowWidth < Width + 4 || Console.WindowHeight < Height + 2) {
             Console.Clear();
             Console.Write("\e[91mUnable to fit window on screen\e[0m");

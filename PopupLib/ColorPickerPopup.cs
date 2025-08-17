@@ -13,7 +13,7 @@ public class ColorPickerPopup : Popup {
     /// <param name="wrap">The ideal amount of characters per line</param>
     /// <param name="type">The type of the popup</param>
     /// <param name="squares">Wheter to display <c>█░</c> in the preview rather than <c>Aa</c></param>
-    public ColorPickerPopup(string content, string? title = null, int wrap = 32, PopupType type = PopupType.Info, bool squares = false) :
+    public ColorPickerPopup(string content, bool squares = false, string? title = null, int wrap = 32, PopupType type = PopupType.Info) :
         base(content, title, wrap, type) {
         Height = Content.Length + 3;
         Width = Math.Max(16, Width);
@@ -32,10 +32,10 @@ public class ColorPickerPopup : Popup {
     /// <returns>The key pressed by the user</returns>
     public static ConsoleColor Quick(string content, int x = -1, int y = -1, string? title = null, int wrap = 32,
         PopupType type = PopupType.Info, bool squares = false) {
-        return new ColorPickerPopup(content, title, wrap, type, squares).Show(x, y);
+        return new ColorPickerPopup(content, squares, title, wrap, type).Show(x, y);
     }
     public bool Squares { get; set; }
-    public void Render(int selected = 0, int x = -1, int y = -1) {
+    private void Render(int selected = 0, int x = -1, int y = -1) {
         if (Console.WindowWidth < Width + 4 || Console.WindowHeight < Height + 2) {
             Console.Clear();
             Console.Write("\e[91mUnable to fit window on screen\e[0m");

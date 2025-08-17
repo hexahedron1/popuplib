@@ -103,7 +103,7 @@ public class Popup {
     /// <param name="x">The x coordinate of the top-left corner. Set to -1 to use center of console window</param>
     /// <param name="y">The y coordinate of the top-left corner. Set to -1 to use center of console window</param>
     /// </summary>
-    public virtual void Render(int x = -1, int y = -1) {
+    protected virtual void Render(int x = -1, int y = -1) {
         if (Console.WindowWidth < Width + 4 || Console.WindowHeight < Height + 2) {
             Console.Clear();
             Console.Write("\e[91mUnable to fit window on screen\e[0m");

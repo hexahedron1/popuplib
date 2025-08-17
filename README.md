@@ -20,3 +20,6 @@ Currently there are 2 types:
 - **ColorPickerPopup** - lets the user pick a ConsoleColor with preview
 - **TextPromptPopup** - lets the user type a line of characters, with optional length limit and placeholder
 
+---
+
+[Documentation](https://hexahedron1.gitbook.io/hexahedron1s-things/popuplib/about)

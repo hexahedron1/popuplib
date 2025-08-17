@@ -1,10 +1,8 @@
 ﻿using PopupLib;
 Console.Clear();
-TextPromptPopup popup = new("Type some garbage here", "type here", limit: (Console.WindowWidth <= 64 ? Console.WindowWidth : null));
-string message = popup.Show();
-ConsoleColor color = ColorPickerPopup.Quick("Select a color");
-Console.Clear();
-Console.ForegroundColor = color;
-Console.WriteLine(message);
-Console.ResetColor();
+Popup popup = new Popup("Hello World!", type: PopupType.Custom) {
+    Icon = '*',
+    Format = "95m"
+};
+popup.Show();
 Console.CursorVisible = true;
